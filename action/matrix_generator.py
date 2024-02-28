@@ -39,7 +39,9 @@ def get_latest_versions(versions: List[str]) -> List[Dict[str, any]]:
             "version": version,
             "is_latest": is_latest,
             "is_latest_major": is_latest_major,
+            "major_version": f"{major}",
             "is_latest_minor": is_latest_minor,
+            "minor_version": f"{major}.{minor}",
         }
         version_objects.append(version_obj)
 
@@ -56,6 +58,7 @@ def main():
 
     value = json.dumps(version_objects, separators=(",", ":"))
 
+    print(value)
     with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
         print(f"{OUTPUT}={value}", file=fh)
 
