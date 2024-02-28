@@ -48,10 +48,11 @@ def get_latest_versions(versions: List[str]) -> List[Dict[str, any]]:
 
 def main():
     all_versions_str = os.environ.get("VERSION_LIST", "")
-    print(all_versions_str)
-    all_versions = json.loads(all_versions_str)
+    all_versions_list = [
+        version.strip() for version in all_versions_str.split(",") if version.strip()
+    ]
 
-    version_objects = get_latest_versions(all_versions)
+    version_objects = get_latest_versions(all_versions_list)
 
     value = json.dumps(version_objects)
 
