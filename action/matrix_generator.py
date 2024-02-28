@@ -57,7 +57,7 @@ def main():
     value = json.dumps(version_objects)
 
     with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
-        print(f"{OUTPUT}='{value}'", file=fh)
+        print(f"{OUTPUT}={value}", file=fh)
 
 
 if __name__ == "__main__":
