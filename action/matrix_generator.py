@@ -54,7 +54,7 @@ def main():
 
     version_objects = get_latest_versions(all_versions_list)
 
-    value = json.dumps(version_objects)
+    value = json.dumps(version_objects, separators=(",", ":"))
 
     with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
         print(f"{OUTPUT}={value}", file=fh)
