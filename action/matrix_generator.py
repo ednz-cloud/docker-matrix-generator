@@ -58,7 +58,8 @@ def main():
 
     value = json.dumps(version_objects, separators=(",", ":"))
 
-    print(value)
+    print(f"Computed values: {value}")
+
     with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
         print(f"{OUTPUT}={value}", file=fh)
 
