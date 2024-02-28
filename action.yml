@@ -1,0 +1,18 @@
+---
+name: Docker build matrix generator
+description: Return a rich matrix from a list of version to ease the tagging of docker images
+
+inputs:
+  versions:
+    description: A list of strings containing the versions to build a matrix for
+    required: true
+
+outputs:
+  version_matrix:
+    description: The matrix generated from the version list
+
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    VERSIONS: ${{ inputs.versions }}
