@@ -9,7 +9,7 @@ The following parameters can be used as `step.with` keys:
 
 | Name               | Type   | Default | Required |Description                       |
 | ------------------ | ------ | ------- |--------- |--------------------------------- |
-| `versions      `   | String |         | yes      | comma separated list of versions |
+| `versions`         | String |         | yes      | comma separated list of versions |
 
 
 ## Example usage
